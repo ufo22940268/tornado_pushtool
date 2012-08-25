@@ -1,4 +1,22 @@
 <html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script type="text/javascript" charset="utf-8" src="./js/jquery-1.8.0.js">
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            function sendAjax() {
+                    $.ajax({
+                        url:'ajaxTesting',
+                        data:'hongbosb',
+                        type:'GET',
+                        sucess:function(data) {
+                        $('body').append("hongbosb is actually a sb."); 
+                        alert("hongbosb")
+                        },
+                    });
+            }
+        </script>
+    </head>
     <body>
         <form action="loading" method="get" accept-charset="utf-8">
             Input devices ip (Adb deamon must be enabled first, Or it won't has permission to push apks to your device.)<br>
@@ -10,5 +28,8 @@
             <input type="checkbox" name="contactsprovider" checked="true">ContactsProvider</input></br>
             <p><input type="submit" value="Continue &rarr;"></p>
         </form>
+
+        <!--  debug code -->
+        <input type="button" id="send_ajax"  value="send ajax">
     </body>
 </html>

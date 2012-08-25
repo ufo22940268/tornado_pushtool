@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script type="text/javascript" src="./spin.js">
+        </script>
+    </head>
+    <body>
+        <form action="loading" method="get" accept-charset="utf-8">
+            <div> 
+                <input type="submit" name="start" value="start" style="text-align: left" class="submit" onclick="start()">
+                <input type="button" name="stop" value="stop" style="text-align: right" class="submit" onclick="stop()">
+                <div id="hongbosb" class="submit" style="text-align: right">
+                </div>
+            </form>
+            <script>
+                var spinner = new Spinner()
+
+                function start() {
+                    var target = document.getElementById("hongbosb")
+                    spinner.spin(target)
+                    disable(target)
+                }
+
+                function stop() {
+                    spinner.stop()
+                }
+            </script>
+        </body>
+    </html>
